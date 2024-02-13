@@ -73,8 +73,8 @@ SetupWizard::SetupWizard(QWidget *parent) : QWizard(parent)
 {
 	resize(640, 480);
 	setWindowTitle(tr("NomadBSD Setup"));
-	setWindowIcon(QPixmap(":/images/logo.png"));
-	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/logo-large.png"));
+	setWindowIcon(QPixmap(":/images/jile.png"));
+	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/jile.png"));
 	addPage(new LocalePage);
 	addPage(new WelcomePage);
 	addPage(new KbdLayoutPage);
