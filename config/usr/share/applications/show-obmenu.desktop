@@ -2,5 +2,5 @@
 Name=Show Openbox menu
 Type=Application
 Exec=/usr/bin/show-obmenu
-Icon=nomadbsd-logo-bright.png
+Icon=swords.png
 NoDisplay=true
