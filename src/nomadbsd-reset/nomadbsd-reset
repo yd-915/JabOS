@@ -106,13 +106,13 @@ rollback() {
 	local dev=$(getrootdev)
 
 	ret="/tmp/askrollback.ret"
-	msg="YOU ARE ABOUT TO RESET NOMADBSD."
+	msg="YOU ARE ABOUT TO RESET JILEOS."
 	msg="${msg} ALL YOUR FILES WILL BE LOST!\n\n"
-	msg="${msg}ARE YOU SURE YOU WANT TO RESET NOMADBSD ON /dev/$dev?"
+	msg="${msg}ARE YOU SURE YOU WANT TO RESET JILEOS ON /dev/$dev?"
 	while [ true ]; do
 		dialog --title "!!! WARNING !!!!" --radiolist "${msg}" 15 60 3 \
-			"Yes" "Reset NomadBSD" off \
-			"No"  "Leave NomadBSD as it is" on >/dev/tty 2>${ret}
+			"Yes" "Reset JileOS" off \
+			"No"  "Leave JileOS as it is" on >/dev/tty 2>${ret}
 		[ $? -ne 0 ] && exitmenu "What do you want to do next?\n"
 		opt=$(cat ${ret})
 		rm -f ${ret}
@@ -136,7 +136,7 @@ rollback() {
 			(cd / && tar xf ${backupfile} 2>/dev/null)
 			ln -s /unionfs/usr/local /usr/local
 			pwd_mkdb -p /etc/master.passwd
-			exitmenu "Resetting NomadBSD done.\n"
+			exitmenu "Resetting JileOS done.\n"
 			exit 0
 			;;
 		No)
@@ -149,7 +149,7 @@ rollback() {
 
 # Check for singel user mode. Is there a better way doing this?
 if ! (ps ax | head | grep '/sbin/init -s'); then
-	errandout "Error: Please boot into single user mode to reset NomadBSD."
+	errandout "Error: Please boot into single user mode to reset JileOS."
 fi
 # Mount /tmp if not mounted
 if ! mount | grep /tmp; then
