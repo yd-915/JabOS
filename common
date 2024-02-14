@@ -116,7 +116,7 @@ get_baseversion()
 
 #
 # Creates an image name of the form
-# nomadbsd-<base version>-<git tag/ID>.<arch>.img
+# jileos-<base version>-<git tag/ID>.<arch>.img
 #
 imagename()
 {
@@ -124,7 +124,7 @@ imagename()
   local version=$(get_version)
   local baseversion=$(get_baseversion)
   local fs=$(echo ${filesystem} | tr '[A-Z]' '[a-z]')
-  local image="nomadbsd"
+  local image="jileos"
   image="nomadbsd-${baseversion}-${version}"
   echo "${image}.${arch}.${fs}.img"
 }
